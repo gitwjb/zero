@@ -1,0 +1,16 @@
+git 配置  代码仓库
+
+java  配置
+maven  配置
+
+spring  test
+
+springframework   default > jpa > mvc > test > mock > log  > security   >  sso   > zookeeper  > redis >search
+
+service  +  mvc  分离 方式 启动
+
+数据库安装
+
+linux 部署
+
+
