@@ -1,7 +1,7 @@
 git 配置  代码仓库
 
 java  配置
-maven  配置
+maven  配置   3.3.9
 
 spring  test
 
