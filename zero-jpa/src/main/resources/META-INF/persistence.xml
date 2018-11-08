@@ -8,9 +8,9 @@
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect" />
             <property name="hibernate.connection.driver_class" value="oracle.jdbc.driver.OracleDriver" />  
-            <property name="hibernate.connection.username" value="zero_dev" />
-            <property name="hibernate.connection.password" value="zero_1234" />
-            <property name="hibernate.connection.url" value="jdbc:oracle:thin:@****:1521/ORCL" />
+            <property name="hibernate.connection.username" value="smartrix_dev" />
+            <property name="hibernate.connection.password" value="smartrix_1234" />
+            <property name="hibernate.connection.url" value="jdbc:oracle:thin:@10.1.15.55:1523/SMXT" />
         </properties>
     </persistence-unit>
 
