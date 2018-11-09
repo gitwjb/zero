@@ -410,14 +410,16 @@
 			</activation>
 			<properties>
 				<!-- Zero Database Server -->
-  				<datasource.jdbc.url>jdbc:oracle:thin:@localhost:1521/ORCL</datasource.jdbc.url>
-				<datasource.user>zero_dev</datasource.user>
-				<datasource.password>zero_1234</datasource.password>  
-				<datasource.hibernate.show.sql>false</datasource.hibernate.show.sql>
-				
-				
-				
-
+  				<datasource.jdbc.url>jdbc:oracle:thin:@10.1.15.55:1523/SMXT</datasource.jdbc.url>
+				<datasource.user>smartrix_dev</datasource.user>
+				<datasource.password>smartrix_1234</datasource.password>  
+<!-- 				<datasource.jdbc.url>jdbc:oracle:thin:@10.1.19.149:1521/bidwcz</datasource.jdbc.url> -->
+<!-- 				<datasource.user>bidw</datasource.user> -->
+<!-- 				<datasource.password>acca_1234</datasource.password> -->
+<!-- 				<datasource.jdbc.url>jdbc:oracle:thin:@10.1.2.43:1521/bidwcz</datasource.jdbc.url> -->
+<!-- 				<datasource.user>bidw</datasource.user> -->
+<!-- 				<datasource.password>bidw_1234</datasource.password> -->
+				<datasource.hibernate.show.sql>true</datasource.hibernate.show.sql>
 			</properties>
 		</profile>
 	</profiles>	
