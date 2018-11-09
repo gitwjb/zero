@@ -21,7 +21,6 @@
   	<module>zero-service</module>
   	<module>zero-app</module>
   	<module>zero-mvc</module>
-  	<module>util</module>
   	<module>zero-util</module>
   </modules>
   
