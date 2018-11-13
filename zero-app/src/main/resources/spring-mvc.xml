@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+	<!-- 自动扫描且只扫描@Controller -->
+	<context:component-scan base-package="cn.com.acca.smartrix"
+		use-default-filters="false">
+		<context:include-filter type="annotation"
+			expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>
+	<mvc:annotation-driven>
+		<mvc:message-converters register-defaults="true">
+			<bean class="org.springframework.http.converter.StringHttpMessageConverter">
+				<constructor-arg value="UTF-8" />
+				<property name="supportedMediaTypes">
+					<list>
+						<value>text/plain;charset=UTF-8</value>
+						<value>text/html;charset=UTF-8</value>
+					</list>
+				</property>
+			</bean>
+<!-- 			<bean id="mappingJacksonHttpMessageConverter" class="araf.web.converter.GzipJsonMessageConverter"> -->
+<!-- 			</bean> -->
+		</mvc:message-converters>
+<!-- 		<mvc:argument-resolvers> -->
+<!-- 			<bean -->
+<!-- 				class="cn.com.acca.agile.framework.core.action.PageRequestInterceptor" /> -->
+<!-- 		</mvc:argument-resolvers> -->
+	</mvc:annotation-driven>
+
+	<!-- 将无法mapping到Controller的path交给default servlet handler处理 -->
+	<mvc:default-servlet-handler />
+
+	<!-- 配置静态资源 -->	
+	<mvc:resources location="/default/" mapping="/default/**" />
+
+	<!-- 定义JSP文件的位置 -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="suffix" value=".jsp" />
+		<property name="contentType" value="text/html; charset=utf-8" />
+	</bean>
+
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="defaultEncoding" value="UTF-8" />
+		<!--resolveLazily属性启用是为了推迟文件解析，以便在UploadAction 中捕获文件大小异常 -->
+		<property name="resolveLazily" value="true" />
+	</bean>
+
+
+	<!-- 定义无Controller的path<->view直接映射 -->
+	<mvc:view-controller path="/" view-name="redirect:/" />
+
+	
+
+    <!-- 装配拦截器 -->
+    <!--定义一个Interceptor，将拦截所有的请求 -->
+<!--     <mvc:interceptors> -->
+<!--         <mvc:interceptor> -->
+<!--             <mvc:mapping path="/**"/> -->
+<!--             排除拦截的地址 -->
+<!--             <mvc:exclude-mapping path="/css/**"/> -->
+<!--             <mvc:exclude-mapping path="/js/**"/> -->
+<!--             <mvc:exclude-mapping path="/img/**"/> -->
+<!--             <mvc:exclude-mapping path="/json/**"/> -->
+<!--             定义在mvc:interceptor下面的表示是对特定的请求才进行拦截的 -->
+<!--             <bean></bean> -->
+<!--         </mvc:interceptor> -->
+<!--     </mvc:interceptors> -->
+</beans>
