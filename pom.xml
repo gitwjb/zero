@@ -9,6 +9,7 @@
   <description>prototype</description>
   
   <properties>
+    <project.build.finalName>zero</project.build.finalName>
     <com.wjb.zero.version>1.0.0-SNAPSHOT</com.wjb.zero.version>
 	<org.springframework.version>4.2.5.RELEASE</org.springframework.version>
 	<org.hibernate.version>5.1.0.Final</org.hibernate.version>
