@@ -9,9 +9,9 @@
   <description>prototype</description>
   
   <properties>
+    <project.build.finalName>zero</project.build.finalName>
     <com.wjb.zero.version>1.0.0-SNAPSHOT</com.wjb.zero.version>
 	<org.springframework.version>4.2.5.RELEASE</org.springframework.version>
-	<org.hibernate.version>5.1.0.Final</org.hibernate.version>
 	
 	<deploy.home>${env.TOMCAT_HOME}/webapps</deploy.home>
   </properties>
@@ -91,12 +91,6 @@
 		<version>1.10.2.RELEASE</version>
 	  </dependency>
 	  
-	  <!-- hibernate jpa  -->
-	  <dependency>
-		<groupId>org.hibernate</groupId>
-		<artifactId>hibernate-entitymanager</artifactId>
-		<version>${org.hibernate.version}</version>
-	  </dependency>
 	  <!-- oracle deriver -->
  	  <dependency>
 		<groupId>com.oracle</groupId>
@@ -140,9 +134,7 @@
 	  </dependency>
   	</dependencies>
   </dependencyManagement>
-  
-  
-  
+    
   <dependencies>
      <!-- Junit 4 -->
     	<dependency>
@@ -151,6 +143,23 @@
 			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
+  		<!-- Logging dependency -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.7</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-core</artifactId>
+			<version>1.1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.1.2</version>
+		</dependency>
+		<!-- Logging dependency end.-->		
   	<!-- Spring Framework Configuration -->
 	  <dependency>
 		<groupId>org.springframework</groupId>
@@ -178,211 +187,35 @@
 	  </dependency>  
   <!-- Spring Framework Configuration End. -->
   
-  <!-- Spring Framework jpa -->
-      <dependency>
-		<groupId>org.springframework</groupId>
-		<artifactId>spring-jdbc</artifactId>
-	  </dependency>
-	  <dependency>
-		<groupId>org.springframework</groupId>
-		<artifactId>spring-tx</artifactId>
-	  </dependency>
-	  <dependency>
-		<groupId>org.springframework</groupId>
-		<artifactId>spring-orm</artifactId>
-	  </dependency>
-	  <dependency>
-		<groupId>org.springframework</groupId>
-		<artifactId>spring-oxm</artifactId>
-	  </dependency>
-	  <dependency>
-		<groupId>org.springframework</groupId>
-		<artifactId>spring-jms</artifactId>
-	  </dependency>	  
-  	  <dependency>
-		<groupId>org.springframework.data</groupId>
-		<artifactId>spring-data-jpa</artifactId>
-	  </dependency>
-	  <!-- datasource -->
-  	  <dependency>
-		<groupId>commons-dbcp</groupId>
-		<artifactId>commons-dbcp</artifactId>
-		<version>1.4</version>
-	  </dependency>
-	  <dependency>
-		<groupId>commons-pool</groupId>
-		<artifactId>commons-pool</artifactId>
-		<version>1.5.4</version>
-	  </dependency>
-	  <!-- hibernate jpa  -->
-	  <dependency>
-	    <groupId>org.hibernate</groupId>
-		<artifactId>hibernate-entitymanager</artifactId>
-	  </dependency>
-	  <!-- oracle deriver -->	  
-	  <dependency>
-		<groupId>com.oracle</groupId>
-		<artifactId>ojdbc7</artifactId>
-	  </dependency>
-  <!-- Spring Framework jpa End. -->
-  
-  <!-- Spring Framework mvc -->
-	  <dependency>
-		<groupId>org.springframework</groupId>
-		<artifactId>spring-webmvc</artifactId>
-	  </dependency>
-  
-    <!-- servlet configuration -->
-    <dependency>
-		<groupId>javax.servlet</groupId>
-		<artifactId>javax.servlet-api</artifactId>
-		<version>3.1.0</version>
-		<type>jar</type>
-		<scope>provided</scope>
-	</dependency>
-	<dependency>
-		<groupId>javax.servlet</groupId>
-		<artifactId>jstl</artifactId>
-		<version>1.2</version>
-	</dependency>
-	<dependency>
-		<groupId>taglibs</groupId>
-		<artifactId>standard</artifactId>
-		<version>1.1.2</version>
-	</dependency>
-	<dependency>
-		<groupId>javax.servlet.jsp</groupId>
-		<artifactId>jsp-api</artifactId>
-		<version>2.2</version>
-		<type>jar</type>
-		<scope>provided</scope>
-	</dependency>
-  <!-- Spring Framework mvc End. -->
     <!-- Spring Framework test -->
   	  <dependency>
 		<groupId>org.springframework</groupId>
 		<artifactId>spring-test</artifactId>
 	  </dependency>
   <!-- Spring Framework test End. -->
-  
-  		<!-- Logging dependency -->
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>1.7.7</version>
-		</dependency>
-		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-core</artifactId>
-			<version>1.1.2</version>
-		</dependency>
-		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-classic</artifactId>
-			<version>1.1.2</version>
-		</dependency>
-		<!-- Logging dependency end.-->
 		
-  		<!-- apache commons dependency -->
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-lang3</artifactId>
-			<version>3.3.2</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-math3</artifactId>
-			<version>3.3</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-compress</artifactId>
-			<version>1.8.1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-configuration2</artifactId>
-			<version>2.1</version>
-		</dependency>
-		<dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-csv</artifactId>
-            <version>1.1</version>
-        </dependency>
-		
-		<dependency>
-			<groupId>commons-collections</groupId>
-			<artifactId>commons-collections</artifactId>
-			<version>3.2.2</version>
-		</dependency>
-		<dependency>
-		    <groupId>commons-beanutils</groupId>
-		    <artifactId>commons-beanutils</artifactId>
-		    <version>1.9.3</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-codec</groupId>
-			<artifactId>commons-codec</artifactId>
-			<version>1.9</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-net</groupId>
-			<artifactId>commons-net</artifactId>
-			<version>3.3</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-digester</groupId>
-			<artifactId>commons-digester</artifactId>
-			<version>2.1</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-io</groupId>
-			<artifactId>commons-io</artifactId>
-			<version>2.4</version>
-		</dependency>
-		<dependency>
-		   <groupId>commons-fileupload</groupId>
-		   <artifactId>commons-fileupload</artifactId>
-		   <version>1.3.2</version> 
-		</dependency>
-		<!-- apache commons dependency end.-->
-		
-		<!-- json util.-->
-		<dependency>
-			<groupId>net.sf.json-lib</groupId>
-			<artifactId>json-lib</artifactId>
-			<version>2.3</version>
-			<classifier>jdk15</classifier>
-			<exclusions>
-				<exclusion>
-					<groupId>commons-collections</groupId>
-					<artifactId>commons-collections</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<!-- json util.-->
-		
-		<!-- csv util.-->
-		<dependency>
-            <groupId>net.sourceforge.javacsv</groupId>
-            <artifactId>javacsv</artifactId>
-            <version>2.0</version>
-        </dependency>
-        <!-- csv util.-->
-		
-		<!-- mail util -->
-		<dependency>
-			<groupId>javax.mail</groupId>
-			<artifactId>mail</artifactId>
-			<version>1.4.2</version>
-			<type>jar</type>
-			<scope>compile</scope>
-		</dependency>
-		<!-- mail util -->
-  
   </dependencies>
   
   <build>
+	<resources>
+		<resource>
+			<directory>src/main/resources</directory>
+			<filtering>true</filtering>
+		</resource>
+		<resource>
+			<directory>src/main/webapp</directory>
+			<filtering>false</filtering>
+			<excludes>
+				<exclude>**</exclude>
+			</excludes>
+		</resource>
+	</resources>
+	<testResources>
+		<testResource>
+			<directory>src/test/resources</directory>
+			<filtering>true</filtering>
+		</testResource>
+	</testResources>    
   	<pluginManagement>
   		<plugins>
   			<plugin>
@@ -390,6 +223,11 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.5.1</version>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.7</version>
+			</plugin>						
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
@@ -462,6 +300,16 @@
 				<compilerVersion>1.8</compilerVersion>
 			</configuration>
 		</plugin>
+		<plugin>
+			<artifactId>maven-resources-plugin</artifactId>
+			<dependencies>
+                   <dependency>
+                       <groupId>org.apache.maven.shared</groupId>
+                       <artifactId>maven-filtering</artifactId>
+                       <version>1.3</version>
+                   </dependency>
+            </dependencies>
+		</plugin>		
 		<plugin>
 			<artifactId>maven-surefire-plugin</artifactId>
 			<configuration>

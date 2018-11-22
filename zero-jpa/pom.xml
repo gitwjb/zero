@@ -9,4 +9,70 @@
   <artifactId>zero-jpa</artifactId>
   <packaging>jar</packaging>
   
+  <properties>
+    <project.build.finalName>zero-jpa</project.build.finalName>
+	<org.hibernate.version>5.1.0.Final</org.hibernate.version>
+  </properties>  
+
+  <dependencyManagement>
+	<dependencies>
+	  <!-- hibernate jpa  -->
+	  <dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-entitymanager</artifactId>
+		<version>${org.hibernate.version}</version>
+	  </dependency>
+	</dependencies>  
+  </dependencyManagement>  
+  
+  <dependencies>
+  <!-- Spring Framework jpa -->
+      <dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-jdbc</artifactId>
+	  </dependency>
+	  <dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-tx</artifactId>
+	  </dependency>
+	  <dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-orm</artifactId>
+	  </dependency>
+	  <dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-oxm</artifactId>
+	  </dependency>
+	  <dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-jms</artifactId>
+	  </dependency>	  
+  	  <dependency>
+		<groupId>org.springframework.data</groupId>
+		<artifactId>spring-data-jpa</artifactId>
+	  </dependency>
+	  <!-- datasource -->
+  	  <dependency>
+		<groupId>commons-dbcp</groupId>
+		<artifactId>commons-dbcp</artifactId>
+		<version>1.4</version>
+	  </dependency>
+	  <dependency>
+		<groupId>commons-pool</groupId>
+		<artifactId>commons-pool</artifactId>
+		<version>1.5.4</version>
+	  </dependency>
+	  <!-- hibernate jpa  -->
+	  <dependency>
+	    <groupId>org.hibernate</groupId>
+		<artifactId>hibernate-entitymanager</artifactId>
+	  </dependency>
+	  <!-- oracle deriver -->	  
+	  <dependency>
+		<groupId>com.oracle</groupId>
+		<artifactId>ojdbc7</artifactId>
+	  </dependency>
+  <!-- Spring Framework jpa End. -->
+  </dependencies>
+  
 </project>

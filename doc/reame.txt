@@ -12,6 +12,6 @@ service  +  mvc  分离 方式 启动
 
 数据库安装
 
-linux 部署
+linux 部署  + docker is pending...
 
 

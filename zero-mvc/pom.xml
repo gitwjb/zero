@@ -15,6 +15,39 @@
   </properties>
   
   <dependencies>
+  <!-- Spring Framework mvc -->
+	  <dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-webmvc</artifactId>
+	  </dependency>
+  
+    <!-- servlet configuration -->
+    <dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>javax.servlet-api</artifactId>
+		<version>3.1.0</version>
+		<type>jar</type>
+		<scope>provided</scope>
+	</dependency>
+	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>jstl</artifactId>
+		<version>1.2</version>
+	</dependency>
+	<dependency>
+		<groupId>taglibs</groupId>
+		<artifactId>standard</artifactId>
+		<version>1.1.2</version>
+	</dependency>
+	<dependency>
+		<groupId>javax.servlet.jsp</groupId>
+		<artifactId>jsp-api</artifactId>
+		<version>2.2</version>
+		<type>jar</type>
+		<scope>provided</scope>
+	</dependency>
+  <!-- Spring Framework mvc End. -->
+    
 	<dependency>
 	   <groupId>com.wjb</groupId>
 	   <artifactId>zero-util</artifactId>
