@@ -90,7 +90,13 @@
 		<artifactId>spring-data-jpa</artifactId>
 		<version>1.10.2.RELEASE</version>
 	  </dependency>
-	  
+
+	  <!-- mysql deriver -->
+	  <dependency>
+	    <groupId>mysql</groupId>
+	    <artifactId>mysql-connector-java</artifactId>
+	    <version>8.0.12</version>
+	  </dependency>	  
 	  <!-- oracle deriver -->
  	  <dependency>
 		<groupId>com.oracle</groupId>
